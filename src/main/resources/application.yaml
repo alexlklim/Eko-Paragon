@@ -1,0 +1,38 @@
+
+server:
+  port: 9090
+
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  sql:
+    init:
+      mode: always
+      continue-on-error: true
+      schema-locations:
+        - classpath:database/schema/schema_image.sql
+        - classpath:database/schema/schema_company.sql
+        - classpath:database/schema/schema_receipt.sql
+#        - classpath:database/schema/schema_user.sql
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/eko_paragon
+    username: root
+    password: 1Qazimodo237!
+  application:
+    name: eko-Paragon
+
+
+springdoc:
+  override-with-generic-response: false
+
+jwt:
+  secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+
+
+
+
+
+api:
+  base-path: /api/v1/eko-paragon

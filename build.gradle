@@ -12,7 +12,6 @@ java {
 		languageVersion = JavaLanguageVersion.of(17)
 	}
 }
-
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -29,13 +28,16 @@ ext {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
 
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
-	implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
-	implementation 'co.elastic.clients:elasticsearch-java'
+
+
 	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+
 
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -49,6 +51,7 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 
 	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+
 
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -68,5 +71,5 @@ tasks.named('test') {
 
 bootJar {
 	enabled = true
-	archiveFileName = 'eko_paragon.jar'
+	archiveFileName = 'eko-paragon.jar'
 }
