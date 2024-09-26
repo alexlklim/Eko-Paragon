@@ -1,7 +1,11 @@
--- delete addresses
-DROP TABLE IF EXISTS contact_infos;
-DROP TABLE IF EXISTS addresses;
-DROP TABLE IF EXISTS cities;
-DROP TABLE IF EXISTS countries;
-
-
+DROP TABLE IF EXISTS employees_cash_registers;
+DROP TABLE IF EXISTS receipts_products;
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS tokens;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS receipts;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS cash_registers;
+DROP TABLE IF EXISTS companies;
+DROP TABLE IF EXISTS images;

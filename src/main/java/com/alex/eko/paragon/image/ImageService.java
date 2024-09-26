@@ -3,11 +3,10 @@ package com.alex.eko.paragon.image;
 
 
 import com.alex.eko.paragon.utils.exceptions.errors.ResourceNotFoundException;
-import com.alex.eko.paragon.utils.security.SH;
+import com.alex.eko.paragon.security.repo.SH;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 

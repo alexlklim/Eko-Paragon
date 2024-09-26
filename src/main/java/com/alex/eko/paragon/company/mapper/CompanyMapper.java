@@ -13,6 +13,19 @@ public class CompanyMapper
 
     @Override
     protected void mapToDTO(CompanyDTO dto, Company entity) {
+        dto.setCreated(entity.getCreated());
+        dto.setCompanyName(entity.getCompanyName());
+        dto.setCompanyAddress(entity.getCompanyAddress());
+        dto.setCompanyEmail(entity.getCompanyEmail());
+        dto.setCompanyPhoneNumber(entity.getCompanyPhoneNumber());
+        dto.setCompanyWebsite(entity.getCompanyWebsite());
 
+        dto.setLogoImageId(entity.getLogoImage() != null ? entity.getLogoImage().getId() : null);
+
+        dto.setTaxpayerName(entity.getTaxpayerName());
+        dto.setSaleAddress(entity.getSaleAddress());
+        dto.setNip(entity.getNip());
+        dto.setOwnerUserId(entity.getOwnerUserId());
     }
+
 }

@@ -14,7 +14,7 @@ public class LoggingAspect {
 
 
     @Pointcut("execution(* com.alex.eko.paragon..*(..)) " +
-            "&& !within(com.alex.eko.paragon.utils.security..*)")
+            "&& !within(com.alex.eko.paragon.security..*)")
     public void applicationPackagePointcut() {
     }
 

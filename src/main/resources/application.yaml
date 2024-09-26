@@ -14,7 +14,24 @@ spring:
         - classpath:database/schema/schema_image.sql
         - classpath:database/schema/schema_company.sql
         - classpath:database/schema/schema_receipt.sql
+        - classpath:database/schema/schema_user.sql
+        - classpath:database/init/init_user.sql
 #        - classpath:database/schema/schema_user.sql
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: asset.track.pro@gmail.com
+    password: khzv asqz sqcu rlxv
+    properties:
+      mail:
+        debug: false
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
 
   datasource:
     url: jdbc:mysql://localhost:3306/eko_paragon

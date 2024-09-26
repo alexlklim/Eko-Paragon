@@ -1,10 +1,7 @@
 package com.alex.eko.paragon.image;
 
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -15,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-
 
 
 @RestController
@@ -32,7 +28,6 @@ public class ImageController {
     ) throws IOException {
         imageService.uploadImage(file, isPublic);
     }
-
 
 
     @DeleteMapping("/{id}")

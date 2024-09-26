@@ -1,6 +1,7 @@
 package com.alex.eko.paragon.utils.abstraction;
 
 import com.alex.eko.paragon.utils.UtilString;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.MappedSuperclass;
@@ -21,6 +22,7 @@ public abstract class BaseDTO implements Serializable {
 
     @Schema(description = UtilString.DATETIME_DESCRIPTION, example = "2024-09-01T14:30:00")
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime created;
 
     @Schema(description = UtilString.CREATED_BY_DESCRIPTION, example = "1")

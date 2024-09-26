@@ -6,6 +6,8 @@ public class UtilName {
     public static final String CONTROLLER = "CONTROLLER - ";
 
     public static final String COMPANY ="COMPANY ";
+    public static final String EMPLOYEE ="EMPLOYEE ";
+    public static final String IMAGE ="IMAGE ";
 
     public static final String CASH_REGISTER = "CASH_REGISTER ";
     public static final String RECEIPT = "RECEIPT ";

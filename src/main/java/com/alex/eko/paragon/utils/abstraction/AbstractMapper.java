@@ -21,7 +21,7 @@ public abstract class AbstractMapper<T extends BaseProperty, D extends BasePrope
         dto.setId(entity.getId());
         dto.setCreatedBy(entity.getCreatedBy());
         dto.setDeleted(entity.getDeleted());
-        dto.setCreated(entity.getCreated());
+//        dto.setCreated(entity.getCreated());
         mapToDTO(dto, entity);
         return dto;
     }

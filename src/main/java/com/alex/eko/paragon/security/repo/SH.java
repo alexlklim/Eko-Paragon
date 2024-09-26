@@ -1,5 +1,6 @@
-package com.alex.eko.paragon.utils.security;
+package com.alex.eko.paragon.security.repo;
 
+import com.alex.eko.paragon.security.jwt.CustomPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 public class SH {
@@ -16,10 +17,4 @@ public class SH {
                         .getPrincipal()).getId();
     }
 
-
-    public static Long getCompanyId() {
-        return ((CustomPrincipal)
-                (SecurityContextHolder.getContext().getAuthentication())
-                        .getPrincipal()).getCompanyId();
-    }
 }

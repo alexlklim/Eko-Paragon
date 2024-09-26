@@ -2,7 +2,7 @@ package com.alex.eko.paragon.utils.abstraction;
 
 
 import com.alex.eko.paragon.utils.exceptions.errors.ResourceNotFoundException;
-import com.alex.eko.paragon.utils.security.SH;
+import com.alex.eko.paragon.security.repo.SH;
 import lombok.SneakyThrows;
 
 import java.lang.reflect.Method;
@@ -37,6 +37,7 @@ public abstract class AbstractBaseService<
     @SneakyThrows
     public DTO update(DTO dto) {
         ENTITY entity = getByIdFromRepository(dto.getId());
+        isUserHaveOwnerPermission(entity);  // Check if the user has permission to update the entity
         // AOP will handle updates to deleted field if necessary
         updateEntityFromDTO(entity, dto);
         ENTITY updatedEntity = repository.save(entity);  // Save the updated entity
@@ -62,7 +63,7 @@ public abstract class AbstractBaseService<
 
     @SneakyThrows
     public ENTITY getActiveById(Long id) {
-        return repository.findByIdAndDeleted(id, true)
+        return repository.findByIdAndDeleted(id, false)
                 .orElseThrow(() -> new ResourceNotFoundException("Entity not found with id: " + id));
     }
 

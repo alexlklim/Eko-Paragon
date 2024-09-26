@@ -48,3 +48,6 @@ CREATE TABLE IF NOT EXISTS receipts_products
     FOREIGN KEY (product_id) REFERENCES products (id)
 );
 
+
+
+

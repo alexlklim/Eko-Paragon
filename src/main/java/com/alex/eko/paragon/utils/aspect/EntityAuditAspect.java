@@ -2,7 +2,7 @@ package com.alex.eko.paragon.utils.aspect;
 
 
 import com.alex.eko.paragon.utils.abstraction.BaseProperty;
-import com.alex.eko.paragon.utils.security.SH;
+import com.alex.eko.paragon.security.repo.SH;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;

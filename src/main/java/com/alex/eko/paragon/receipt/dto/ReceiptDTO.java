@@ -1,8 +1,9 @@
 package com.alex.eko.paragon.receipt.dto;
 
-
-import com.alex.eko.paragon.utils.abstraction.BaseProperty;
+import com.alex.eko.paragon.receipt.domain.enums.Currency;
 import com.alex.eko.paragon.utils.abstraction.BaseDTO;
+import com.alex.eko.paragon.utils.abstraction.BaseProperty;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.*;
@@ -25,8 +26,7 @@ public class ReceiptDTO
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     String uuid;
 
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    Long userId;
+    Long receiverId;
 
     String taxpayerName;
 
@@ -36,6 +36,7 @@ public class ReceiptDTO
 
     Long sequentialPrintNumber;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     LocalDateTime salesDate;
 
 
@@ -49,33 +50,56 @@ public class ReceiptDTO
     Double salesTaxC;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double salesTaxA_PTU;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double salesTaxB_PTU;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double salesTaxC_PTU;
 
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double sumPTU;
 
-    String currency;
+    Currency currency;
 
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double totalDiscount;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonFormat(shape = JsonFormat.Shape.NUMBER, pattern = "#.##")
     Double grossPrice;
 
     Long consecutiveNumberFiscalReceipt;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     String cashRegisterNumber;
 
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     String cashierIdentification;
 
+
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     List<ProductDTO> productDTOs;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    List<Long> productIds;
 
 
+
+
+
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    Long cashRegisterId;
+
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    Long employeeId;
 }

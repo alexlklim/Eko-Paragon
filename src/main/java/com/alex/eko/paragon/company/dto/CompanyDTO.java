@@ -18,7 +18,6 @@ public class CompanyDTO
         implements BaseProperty {
 
 
-
     String companyName;
 
     String companyAddress;

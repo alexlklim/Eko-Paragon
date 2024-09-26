@@ -44,10 +44,6 @@ public class Employee
     String address;
 
 
-    @Enumerated(EnumType.STRING)
-    EmployeeRole employeeRole;
-
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "profile_image_id")
     Image profileImage;
